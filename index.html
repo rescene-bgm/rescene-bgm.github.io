@@ -34,6 +34,9 @@ h1{margin:0;font-size:17px;font-weight:800;letter-spacing:-.3px;background:linea
 h1 small{font-weight:600;color:var(--g);-webkit-text-fill-color:var(--g);margin-left:8px;font-size:10px;letter-spacing:2.5px}
 #q{width:100%;padding:11px 18px 11px 44px;border-radius:99px;border:1px solid var(--s87);background:var(--s34) url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='16' height='16' fill='none' stroke='%239a98c0' stroke-width='2' stroke-linecap='round'%3E%3Ccircle cx='7' cy='7' r='5'/%3E%3Cpath d='M11 11l4 4'/%3E%3C/svg%3E") no-repeat 17px center;color:var(--hi);font:inherit;box-shadow:0 4px 22px #0007;transition:.2s}
 #q::placeholder{color:var(--t4)}
+/* 검색어 지우기: 브라우저 기본 ✕는 포커스가 있을 때만 보이므로 숨기고, 항상 보이는 버튼(#qc)을 따로 둔다(PC) */
+#q::-webkit-search-cancel-button{-webkit-appearance:none;display:none}
+#qc{display:none}
 #q:focus{outline:0;border-color:var(--a);box-shadow:0 0 0 3px color-mix(in srgb,var(--a) 20%,transparent),0 0 30px color-mix(in srgb,var(--a) 13%,transparent)}
 .app{display:flex;flex:1;min-height:0}
 .rail{width:78px;flex:none;display:flex;flex-direction:column;gap:10px;padding:12px 10px;overflow:auto;background:var(--rail)}
@@ -161,7 +164,7 @@ header{display:flex;align-items:center;gap:8px;height:auto;min-height:58px;paddi
 .br small{font-size:9.5px;font-weight:600;letter-spacing:2.6px;margin-top:3px;color:var(--g);-webkit-text-fill-color:var(--g)}
 html.lt .br>span{background:linear-gradient(90deg,var(--a2),var(--b));-webkit-background-clip:text;background-clip:text}
 #q{display:none;flex:1;min-width:0;font-size:16px;padding:9px 12px 9px 38px;background-position:13px center;box-shadow:none}
-#q::-webkit-search-cancel-button{-webkit-appearance:none}
+#q::-webkit-search-cancel-button{-webkit-appearance:none;display:none}
 #qs{display:grid;place-items:center;flex:none;width:40px;height:40px;padding:0;color:var(--a2)}#qs svg{width:18px;height:18px;fill:none;stroke:currentColor;stroke-width:2.2;stroke-linecap:round}
 body.sq .br,body.sq #qs,body.sq .hb{display:none}body.sq #q,body.sq #qx{display:block}
 #qx{flex:none;padding:9px 14px;font-size:13px}
@@ -256,6 +259,7 @@ dialog#ab{max-height:82dvh}#ab .abh{padding:14px 14px 12px 18px;gap:8px}#ab h2{f
 }
 /* ── PC(≥901px): 여백과 리듬. 테두리는 줄이고, 면과 간격으로 구획한다 */
 @media(min-width:901px){
+#q{grid-column:2;grid-row:1;padding-right:46px}#qc{display:grid;grid-column:2;grid-row:1;justify-self:end;place-items:center;width:30px;height:30px;margin-right:9px;padding:0;border:0;border-radius:50%;background:transparent;color:var(--t3);z-index:1}#qc:hover{color:var(--hi);background:var(--ov)}#qc[hidden]{display:none}#qc svg{width:18px;height:18px;fill:currentColor}
 header{height:72px;padding:0 32px;grid-template-columns:1fr minmax(0,480px) 1fr;background:linear-gradient(color-mix(in srgb,var(--s19) 92%,transparent),color-mix(in srgb,var(--s13) 80%,transparent))}
 h1{display:flex;align-items:center;gap:12px;font-size:18px}h1 small{margin-left:2px}
 #q{padding:12px 20px 12px 46px;background-color:color-mix(in srgb,var(--s34) 80%,transparent);border-color:color-mix(in srgb,var(--s87) 70%,transparent)}
@@ -345,7 +349,7 @@ html.lt .vid{box-shadow:0 0 0 1px var(--s37),0 24px 56px -26px #2a2150b0}
 html.lt .pw>.vid:nth-of-type(2){box-shadow:0 0 0 1px color-mix(in srgb,var(--a) 53%,transparent),0 24px 56px -26px #2a2150b0}
 .sw button[data-th="6"]{box-shadow:inset 0 0 0 1px #8886}
 </style></head><body data-mt="tl">
-<header><span class="br"><i class="lg" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M9.5 17.6a2.6 2.6 0 1 1-2-2.53V6.2L18.5 4v11.6a2.6 2.6 0 1 1-2-2.53V8.1l-7 1.4z"/></svg></i><span>안원잘부 BGM 아카이브<small>FAN ARCHIVE</small></span></span><h1><i class="lg" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M9.5 17.6a2.6 2.6 0 1 1-2-2.53V6.2L18.5 4v11.6a2.6 2.6 0 1 1-2-2.53V8.1l-7 1.4z"/></svg></i>안원잘부 BGM 아카이브<small>FAN ARCHIVE</small></h1><input id="q" type="search" enterkeyhint="search" placeholder="곡명 · 아티스트 · 장면 검색"><button id="qx" data-qx>취소</button><button id="qs" data-qs aria-label="검색"><svg viewBox="0 0 24 24"><circle cx="10.5" cy="10.5" r="6"/><path d="M15 15l5 5"/></svg></button><span class="hb"><span class="rt2"><button data-rt="ch" title="인기 순위"><svg class="ic" aria-hidden="true" viewBox="0 0 24 24"><path d="M5 20v-8M12 20V5M19 20v-5"/></svg>TOP</button><button data-rt="my" title="나만의 플레이리스트"><svg class="ic" aria-hidden="true" viewBox="0 0 24 24"><path d="M12 20s-7.5-4.6-7.5-10.2A4.1 4.1 0 0 1 12 7.4a4.1 4.1 0 0 1 7.5 2.4C19.5 15.4 12 20 12 20z"/></svg>MY</button></span><button class="ht" data-about>HOW-TO</button></span></header>
+<header><span class="br"><i class="lg" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M9.5 17.6a2.6 2.6 0 1 1-2-2.53V6.2L18.5 4v11.6a2.6 2.6 0 1 1-2-2.53V8.1l-7 1.4z"/></svg></i><span>안원잘부 BGM 아카이브<small>FAN ARCHIVE</small></span></span><h1><i class="lg" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M9.5 17.6a2.6 2.6 0 1 1-2-2.53V6.2L18.5 4v11.6a2.6 2.6 0 1 1-2-2.53V8.1l-7 1.4z"/></svg></i>안원잘부 BGM 아카이브<small>FAN ARCHIVE</small></h1><input id="q" type="search" enterkeyhint="search" placeholder="곡명 · 아티스트 · 장면 검색"><button id="qc" type="button" aria-label="검색어 지우기" title="검색어 지우기" hidden><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 2a10 10 0 1 0 0 20 10 10 0 0 0 0-20zm4.2 12.8-1.4 1.4L12 13.4l-2.8 2.8-1.4-1.4 2.8-2.8-2.8-2.8 1.4-1.4 2.8 2.8 2.8-2.8 1.4 1.4-2.8 2.8z"/></svg></button><button id="qx" data-qx>취소</button><button id="qs" data-qs aria-label="검색"><svg viewBox="0 0 24 24"><circle cx="10.5" cy="10.5" r="6"/><path d="M15 15l5 5"/></svg></button><span class="hb"><span class="rt2"><button data-rt="ch" title="인기 순위"><svg class="ic" aria-hidden="true" viewBox="0 0 24 24"><path d="M5 20v-8M12 20V5M19 20v-5"/></svg>TOP</button><button data-rt="my" title="나만의 플레이리스트"><svg class="ic" aria-hidden="true" viewBox="0 0 24 24"><path d="M12 20s-7.5-4.6-7.5-10.2A4.1 4.1 0 0 1 12 7.4a4.1 4.1 0 0 1 7.5 2.4C19.5 15.4 12 20 12 20z"/></svg>MY</button></span><button class="ht" data-about>HOW-TO</button></span></header>
 <div class="app">
 <nav class="rail" id="rl"></nav>
 <section class="pn" id="pe"><div><h3>EPISODES<button class="sx" data-x>닫기</button></h3><div id="sc"></div><div id="el"><div class="sk ske"></div><div class="sk ske"></div><div class="sk ske"></div><div class="sk ske"></div></div></div></section>
@@ -493,7 +497,7 @@ const card=c=>`<div class="card${c.id==selId?' sel':''}" id="${c.id}"><div class
 let SF='all',EX=null;const SFL={all:'전체',artist:'아티스트',title:'곡명',extra:'정보',desc:'장면',ep:'편명'};
 // 편 제목은 곡 검색 대상에서 뺀다(편 제목에 검색어가 있으면 그 편 곡이 전부 걸리므로). 편 제목은 '편명' 범위로 따로 찾는다
 const SFF={all:c=>[c.desc,c.artist,c.title,c.extra],artist:c=>[c.artist],title:c=>[c.title],extra:c=>[c.extra],desc:c=>[c.desc]};
-function list(){setTimeout(navEdge);if(!$('#q').value.trim()){SF='all';EX=null}const raw=$('#q').value.trim(),q=raw.toLowerCase();let h='';
+function list(){setTimeout(navEdge);if(!$('#q').value.trim()){SF='all';EX=null}const raw=$('#q').value.trim(),q=raw.toLowerCase();let h='';$('#qc').hidden=!$('#q').value;
  if(q){const em=E.filter(e=>String(e.title).toLowerCase().includes(q)),isE=SF=='ep',a=isE?[]:scenes.filter(c=>SFF[SF](c).join(' ').toLowerCase().includes(q));
   const xe=isE&&em.find(e=>e.id==EX);shown=isE?(xe?xe.scenes:[]):a;
   const chips=Object.keys(SFL).map(k=>`<button data-sf="${k}" class="${k==SF?'on':''}" aria-pressed="${k==SF}">${SFL[k]}${k=='ep'&&em.length?` <b>${em.length}</b>`:''}</button>`).join('');
@@ -679,6 +683,7 @@ pL.addEventListener('touchend',()=>{lpEnd();if(dg==null)return;noclk=Date.now()+
 pL.addEventListener('touchcancel',()=>{lpEnd();if(dg!=null){dg=null;rp()}});
 pL.addEventListener('contextmenu',e=>{if(e.target.closest('.pl2')&&CO.matches)e.preventDefault()});
 $('#q').addEventListener('input',list);
+$('#qc').addEventListener('click',()=>{$('#q').value='';list();$('#q').focus()});
 window.addEventListener('blur',()=>setTimeout(()=>{const a=document.activeElement;if(!a||a.tagName!='IFRAME')return;
  ['m','b'].forEach(w=>{const p=w=='m'?P:B;if(p&&p.getIframe&&p.getIframe()===a&&pend[w]&&Date.now()<pend[w]){if(seen[w])fin(w);else{want[w]=true;if(!wm[w]&&p.unMute)p.unMute()}}})},0));
 // 사용자가 타임라인을 직접 스크롤한 직후에는 자동 따라가기 스크롤을 잠시 멈춘다
