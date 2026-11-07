@@ -533,7 +533,7 @@ function st(e,w){const s=e.data;if(s==3)return;if(pend[w]&&Date.now()<pend[w]){c
  const on=s==1;
  if(on)lastP=w;
  if(w=='m'){mp=on;if(on){SRC='main';bp=false;if(qOn){qOn=false;rp()}B&&B.pauseVideo&&B.pauseVideo();follow(true)}}
- else{bp=on;if(on){SRC='bgm';mp=false;P&&P.pauseVideo&&P.pauseVideo();if(selB){setSel(selB);const x=scenes.find(s=>s.id==selB);x&&npSet(x,x.uid)}cntPlay(cur,scenes.find(s=>s.id==selB))}if(s==0&&qOn)playQ(qi+1)}live()}
+ else{bp=on;if(on){SRC='bgm';mp=false;P&&P.pauseVideo&&P.pauseVideo();if(selB){setSel(selB);const x=scenes.find(s=>s.id==selB);x&&npSet(x,x.uid)}pqOn()}else pqOff();if(s==0&&qOn)playQ(qi+1)}live()}
 function follow(sc){if(!P||!P.getCurrentTime||!ep||$('#q').value)return;const t=P.getCurrentTime();let c=null;ep.scenes.forEach(s=>{if(sec(s.t)<=t)c=s});if(c&&c.id!=selId){setSel(c.id,sc);syncB(c)}}
 // 원본 영상 쪽에서 장면이 바뀌면(썸네일 클릭, 원본 재생 중 장면 넘어감), 브금이 재생 중이 아닐 때
 // 곡 정보와 아래 브금 플레이어도 그 장면 곡으로 맞춘다. 브금이나 플레이리스트가 재생 중이면 건드리지 않는다
@@ -544,7 +544,7 @@ function play(u,sid,fq,z){const c=tracks[u];if(!c||!B||!B.loadVideoById)return;l
  if(!fq)qOn=false;
  const es=sid&&scenes.find(x=>x.id==sid)||ep.scenes.find(s=>s.uid==u);selB=es?es.id:null;setSel(selB,false);
  const x=es||scenes.find(s=>s.uid==u)||c;
- B.loadVideoById({videoId:u,startSeconds:(fq||z)?0:sec(x.start)});cntPlay(u,(fq||z)?null:x)
+ B.loadVideoById({videoId:u,startSeconds:(fq||z)?0:sec(x.start)});pqSet(u,(fq||z)?null:x)
  npSet(x,u);live();rp();
  // 타임라인 카드에서 곡을 재생하면 위 원본 영상도 그 장면으로 옮겨 둔다(재생은 하지 않음).
  // 검색 결과·플레이리스트·TOP에서 재생할 때는 원본을 그대로 두고 브금만 재생한다(검색 결과는 썸네일·시간을 눌러야 원본이 이동)
@@ -575,9 +575,15 @@ function add(u){if(pl.includes(u))return;pl.push(u);localStorage.pl=JSON.stringi
 function rp(){syncAd();$('#pc').textContent=pl.length?pl.length+'곡 · '+(CO.matches?'꾹 눌러 끌어서':'끌어서')+' 정렬':'';
  $('#pl').innerHTML=pl.map((u,i)=>tracks[u]?`<div class="rk pl2${u==cur&&qOn?' on':''}" draggable="${!CO.matches}" data-q="${i}" tabindex="0" role="button"><i class="hd">⋮⋮</i><img draggable="false" alt="" src="${th(u)}"><div><b>${esc(tracks[u].title)}</b><small>${esc(tracks[u].artist)}</small></div><button data-r="${u}">✕</button></div>`:'').join('')||'<p class="empty">+ 담기를 누르면 여기에 모입니다.</p>'}
 function bump(u,k){if(SB.url&&LIVE)fetch(SB.url+'/rest/v1/rpc/bump',{method:'POST',headers:H,body:JSON.stringify({p_uid:u,p_kind:k})}).catch(()=>{})}
-// 기본으로 여는 편(최신 편)의 앞쪽 장면(첫 곡 + 다음 다섯 곡)은 시험 삼아 눌러 보는 재생이 많아서 확률적으로 덜 센다
-// W[i] = i번째 장면 곡의 재생이 1회로 집계될 확률. 다른 편, 뒤쪽 장면, TOP·플레이리스트에서 고른 재생은 항상 1
-const W=[.3,.5,.6,.7,.8,.9];
+// 기본으로 여는 편(최신 편)의 앞쪽 장면(첫 곡 + 다음 세 곡)은 시험 삼아 눌러 보는 재생이 많아서 확률적으로 덜 센다
+// W[i] = i번째 장면 곡의 재생이 1회로 집계될 확률. 다섯 번째 장면부터, 다른 편, TOP·플레이리스트에서 고른 재생은 항상 1
+const W=[.3,.5,.7,.85];
+// 재생 집계는 브금이 (멈춘 시간을 빼고) 10초 이상 재생됐을 때만 한다. 곡이 바뀌면 처음부터 다시 잰다
+// pq.c: 집계 기준 장면(가중치 판단용). TOP·플레이리스트에서 고른 재생은 null(항상 1)
+const MINP=10000;let pq={u:null,c:null,acc:0,t0:0},pqT;
+function pqSet(u,c){clearTimeout(pqT);pq={u,c,acc:0,t0:0}}
+function pqOn(){if(!cur||pc.has(cur))return;if(pq.u!=cur)pqSet(cur,scenes.find(s=>s.id==selB));clearTimeout(pqT);pq.t0=Date.now();const{u,c}=pq;pqT=setTimeout(()=>{if(bp&&cur==u)cntPlay(u,c)},Math.max(0,MINP-pq.acc))}
+function pqOff(){clearTimeout(pqT);if(pq.t0){pq.acc+=Date.now()-pq.t0;pq.t0=0}}
 function cntPlay(u,c){if(!u||pc.has(u))return;pc.add(u);const i=c&&c.ep===latest()?c.ep.scenes.indexOf(c):-1,w=i>=0&&i<W.length?W[i]:1;if(Math.random()<w)bump(u,'play')}
 async function chart(){const o=$('#top');if(!SB.url){o.innerHTML='<p class="empty">통계 서버가 연결되지 않았습니다.</p>';return}
  try{const r=await(await fetch(`${SB.url}/rest/v1/bgm_analytics?select=track_uid,${tab}&${tab}=gt.0&order=${tab}.desc&limit=60`,{headers:H})).json();
