@@ -20,11 +20,18 @@
 <script type="application/ld+json">{"@context": "https://schema.org", "@type": "WebSite", "name": "안원잘부 브금 아카이브", "alternateName": ["안원잘부 BGM 아카이브", "안원잘부 브금", "리센느 안원잘부 브금"], "url": "https://rescene-bgm.github.io/", "inLanguage": "ko", "description": "리센느(RESCENE) 안원잘부 영상의 브금(BGM)을 에피소드별 타임라인으로 정리한 팬 아카이브. 곡명·아티스트·장면 검색.", "sameAs": ["https://gall.dcinside.com/mgallery/board/view/?id=kpopcontent&no=9407"], "about": {"@type": "CreativeWorkSeries", "name": "안녕하세요원이입니다잘부탁드립니다", "alternateName": "안원잘부", "creator": {"@type": "MusicGroup", "name": "RESCENE", "alternateName": "리센느"}}}</script>
 <link rel="manifest" href="manifest.webmanifest"><meta name="theme-color" content="#0b0a14"><link rel="apple-touch-icon" href="apple-touch-icon.png"><meta name="apple-mobile-web-app-title" content="안원잘부 BGM"><meta name="apple-mobile-web-app-capable" content="yes"><meta name="mobile-web-app-capable" content="yes">
 <link rel="icon" id="fav" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect width='32' height='32' rx='8' fill='%238b5cf6'/%3E%3Cpath transform='translate%284 4.5%29' fill='%23fff' d='M9.5 17.6a2.6 2.6 0 1 1-2-2.53V6.2L18.5 4v11.6a2.6 2.6 0 1 1-2-2.53V8.1l-7 1.4z'/%3E%3C/svg%3E">
+<script>
+// 파비콘: 저장된 테마 색으로 처음부터 맞춰 둔다(Safari는 페이지를 열 때 읽은 파비콘을 오래 붙잡고 있어서).
+// 주소 끝에 매번 다른 값을 붙여, 같은 색으로 돌아가도 브라우저가 '바뀐 것 없음'으로 보고 이전 아이콘을 쓰지 않게 한다
+function FAV(c){return 'data:image/svg+xml,'+encodeURIComponent(`<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'><rect width='32' height='32' rx='8' fill='${c}'/><path transform='translate(4 4.5)' fill='#fff' d='M9.5 17.6a2.6 2.6 0 1 1-2-2.53V6.2L18.5 4v11.6a2.6 2.6 0 1 1-2-2.53V8.1l-7 1.4z'/><!--${Date.now()}--></svg>`)}
+function setFav(c){var l=document.getElementById('fav');if(l)l.href=FAV(c)}
+(function(){var i=0;try{i=+JSON.parse(localStorage.theme)||0}catch(e){}setFav(['#8b5cf6','#3b82f6','#16a34a','#ea580c','#db2777','#71717a','#7c4de8'][i]||'#8b5cf6')})();
+</script>
 <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/orioncactus/pretendard@v1.3.9/dist/web/variable/pretendardvariable-dynamic-subset.min.css">
 <style>
 :root{--s:#64649e;--bg:var(--s5);--rail:var(--s8);--l:var(--s37);--card:var(--s24);--t:#f2f1f7;--m:#9393aa;--a:#8b5cf6;--a2:#cbbfff;--b:#5cc8ff;--g:#d9bd8c;--t2:#cfcfe0;--t3:#a9a9c0;--t4:#b4b4d0;--hi:#fff;--ov:#ffffff10;--s5:color-mix(in srgb,var(--s) 5%,#000);--s6:color-mix(in srgb,var(--s) 6%,#000);--s8:color-mix(in srgb,var(--s) 8%,#000);--s13:color-mix(in srgb,var(--s) 13%,#000);--s14:color-mix(in srgb,var(--s) 14%,#000);--s15:color-mix(in srgb,var(--s) 15%,#000);--s16:color-mix(in srgb,var(--s) 16%,#000);--s19:color-mix(in srgb,var(--s) 19%,#000);--s20:color-mix(in srgb,var(--s) 20%,#000);--s22:color-mix(in srgb,var(--s) 22%,#000);--s23:color-mix(in srgb,var(--s) 23%,#000);--s24:color-mix(in srgb,var(--s) 24%,#000);--s26:color-mix(in srgb,var(--s) 26%,#000);--s27:color-mix(in srgb,var(--s) 27%,#000);--s28:color-mix(in srgb,var(--s) 28%,#000);--s29:color-mix(in srgb,var(--s) 29%,#000);--s31:color-mix(in srgb,var(--s) 31%,#000);--s34:color-mix(in srgb,var(--s) 34%,#000);--s35:color-mix(in srgb,var(--s) 35%,#000);--s37:color-mix(in srgb,var(--s) 37%,#000);--s38:color-mix(in srgb,var(--s) 38%,#000);--s41:color-mix(in srgb,var(--s) 41%,#000);--s44:color-mix(in srgb,var(--s) 44%,#000);--s48:color-mix(in srgb,var(--s) 48%,#000);--s57:color-mix(in srgb,var(--s) 57%,#000);--s87:color-mix(in srgb,var(--s) 87%,#000);--a25:color-mix(in srgb,var(--a) 25%,#000);--a30:color-mix(in srgb,var(--a) 30%,#000);--a33:color-mix(in srgb,var(--a) 33%,#000);--a53:color-mix(in srgb,var(--a) 53%,#000);--a55:color-mix(in srgb,var(--a) 55%,#000);--a58:color-mix(in srgb,var(--a) 58%,#000);--a65:color-mix(in srgb,var(--a) 65%,#000);--a78:color-mix(in srgb,var(--a) 78%,#000);--a85:color-mix(in srgb,var(--a) 85%,#000);}
 *{box-sizing:border-box}html,body{margin:0}
-body{color:var(--t);font:14px/1.5 "Pretendard Variable",Pretendard,"Noto Sans KR",system-ui,sans-serif;overflow:hidden;height:100vh;display:flex;flex-direction:column;
+body{color:var(--t);font:14px/1.5 "Pretendard Variable",Pretendard,"Noto Sans KR",system-ui,sans-serif;overflow:hidden;height:100vh;height:100dvh;display:flex;flex-direction:column;
 background:radial-gradient(60% 50% at 50% -8%,color-mix(in srgb,var(--a53) 60%,transparent) 0%,color-mix(in srgb,var(--a30) 32%,transparent) 40%,transparent 72%),var(--bg) fixed}
 body::before{content:"";position:fixed;inset:0;pointer-events:none;z-index:49;background:radial-gradient(ellipse at 50% 45%,transparent 64%,#0007 100%)}
 body::after{content:"";position:fixed;inset:0;pointer-events:none;z-index:50;opacity:.08;mix-blend-mode:overlay;background:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='160' height='160'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='.9' numOctaves='2'/%3E%3C/filter%3E%3Crect width='160' height='160' filter='url(%23n)'/%3E%3C/svg%3E")}
@@ -56,7 +63,7 @@ h3{margin:0 0 12px;font-size:11px;letter-spacing:2.5px;color:var(--g);font-weigh
 .ec:hover{transform:translateY(-2px);border-color:var(--a78)}
 .ec.on{border-color:var(--a);box-shadow:0 0 0 1px var(--a)}
 main{flex:1;min-width:0;overflow:auto;padding:16px 20px;display:flex;justify-content:center;align-items:flex-start}
-.pw{width:min(100%,calc((100vh - 312px)*8/9))}
+.pw{width:min(100%,calc((100vh - 312px)*8/9));width:min(100%,calc((100dvh - 312px)*8/9))}
 .vid{position:relative;aspect-ratio:16/9;background:#000;border-radius:14px;overflow:hidden;box-shadow:0 0 0 1px var(--ov),0 30px 70px -20px #000}.vid iframe{width:100%;height:100%;display:block}
 .pw>.vid:nth-of-type(2){box-shadow:0 0 0 1px color-mix(in srgb,var(--a) 40%,transparent),0 30px 70px -20px #000,0 0 120px -30px color-mix(in srgb,var(--a) 65%,transparent)}
 .ov{position:absolute;inset:0;z-index:2;display:flex;flex-direction:column;align-items:center;justify-content:center;gap:6px;padding:16px;text-align:center;background:#000e}
@@ -96,7 +103,8 @@ main{flex:1;min-width:0;overflow:auto;padding:16px 20px;display:flex;justify-con
 .gh .sb{background:var(--a);border-radius:8px;padding:0 8px;font-weight:800;font-size:12px}.gh b{flex:1;min-width:0;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}.gh small{color:var(--g)}
 .tot{margin-top:22px;text-align:center;padding:10px 0 4px;border-top:1px solid var(--l);color:var(--m);font-size:11px;line-height:1.3}.tot b{display:block;color:var(--g);font-size:19px;font-weight:800}
 #toast{position:fixed;left:50%;bottom:70px;transform:translateX(-50%);background:var(--s29);border:1px solid var(--a);padding:9px 18px;border-radius:99px;z-index:60;opacity:0;pointer-events:none;transition:.25s;font-size:13px;max-width:calc(100vw - 24px);text-align:center}#toast.on{opacity:1}
-.bt{display:flex;gap:6px;margin-top:7px;align-items:center}
+/* 칸이 좁아도 버튼 글자가 한 글자씩 줄바꿈되지 않게: 글자는 한 줄로, 자리가 모자라면 버튼째 다음 줄로 */
+.bt{display:flex;flex-wrap:wrap;gap:6px;margin-top:7px;align-items:center}.bt button{flex:none;white-space:nowrap}
 button{font:inherit;background:var(--s35);color:var(--t);border:1px solid var(--l);border-radius:99px;padding:3px 12px;cursor:pointer;transition:.15s}
 button:hover{border-color:var(--a)}button.pl{background:var(--a);border-color:var(--a);color:#fff}button.ad.on{color:var(--g);border-color:color-mix(in srgb,var(--g) 75%,transparent);background:color-mix(in srgb,var(--g) 20%,var(--s35));font-weight:700}
 .seg{display:flex;padding:3px;border-radius:99px;background:var(--s14);border:1px solid var(--l);margin-bottom:12px}
@@ -132,9 +140,24 @@ footer a{color:var(--a2);font-weight:600}footer .fm{display:flex;gap:10px;align-
 footer b{white-space:nowrap;color:var(--g);font-size:10px;letter-spacing:2px}
 ::-webkit-scrollbar{width:8px;height:8px}::-webkit-scrollbar-thumb{background:var(--s48);border-radius:9px}
 @media(max-width:1100px){.tl{width:400px}.card{grid-template-columns:110px 1fr}.th img{width:110px}}
+/* 타임라인 폭이 최소값(380px)에 걸리는 화면(태블릿 가로·작은 노트북)은 썸네일을 줄여 곡 정보 칸을 넓힌다 */
+@media(max-width:1400px){.card{grid-template-columns:110px 1fr}.th img{width:110px}}
 /* 터치 기기: 탭한 뒤 hover 이동 효과가 남지 않게 */
 @media(hover:none){.card:hover,.ec:hover,.rail a:hover{transform:none}}
-#tb,#qx,#qs,#sc,.sx,.tg,.br,.om,#npc{display:none}
+#tb,#qx,#qs,#sc,.sx,.tg,.br,.om,#npc,.rtl{display:none}
+/* 장면 카드(#npc) 부품: 모바일 기본 모드와, PC 배치에서 태블릿·가운데 칸이 좁을 때 쓴다 */
+@keyframes nudge{0%,100%{transform:none}30%{transform:translateX(-24px)}55%{transform:translateX(9px)}75%{transform:translateX(-4px)}}.nudge{animation:nudge 1.1s .6s ease-in-out 1}
+.nch{display:flex;align-items:center;gap:8px;font-size:12px;line-height:1.4;color:var(--t3);white-space:nowrap;overflow:hidden;padding-left:8px;border-left:2px solid color-mix(in srgb,var(--g) 40%,transparent)}.nch b{color:var(--a2);margin-right:6px;font-weight:700}.nch>span{flex:1;min-width:0;overflow:hidden;text-overflow:ellipsis}.pg{flex:none;font-style:normal;font-size:11.5px;color:var(--m);font-variant-numeric:tabular-nums}
+.swh{margin-top:8px;text-align:center;font-size:12px;color:var(--a2);letter-spacing:.2px;opacity:.9}
+.ncb{display:flex;align-items:center;gap:10px;margin-top:9px}
+.ncb .ad{flex:none;width:40px;height:40px;padding:0;display:grid;place-items:center}.ncb .ad em{display:none}.ncb .ad .ic{width:17px;height:17px}
+.nci{flex:1;min-width:0}.nci>*{white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
+.nci .tt{margin:0;font-size:15px;gap:6px}.nci .st{font-size:11px;padding:0 6px}.nci .ar{font-size:12.5px;margin-top:1px}.nci .chips{margin-top:3px}
+.ncb .eq{display:none;flex:none}#np.live .ncb .eq{display:flex}
+.nvx{flex:none;display:flex;gap:6px}
+.nvx button,.nx1{display:inline-flex;align-items:center;justify-content:center;height:44px;font-size:13px;font-weight:700}
+.nvx button{width:44px;padding:0}.nx1{padding:0 6px 0 12px}.nvx .ic,.nx1 .ic{width:18px;height:18px}
+.nc0{display:flex;align-items:center;gap:12px}.nc0>div{flex:1;min-width:0}.nc0 small{display:block;color:var(--g);font-size:11px;font-weight:700;letter-spacing:1.5px}.nc0 b{display:block;font-size:15px;line-height:1.35;color:var(--hi)}.nc0 span{display:block;margin-top:2px;color:var(--m);font-size:12px;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}.nx1{flex:none}
 /* 숫자는 고정폭으로(시간·순서 표시가 흔들리지 않게) */
 .ts,.st,.pg,.nch b,#nps,.rk>i,.tot b,.rail small{font-variant-numeric:tabular-nums}
 /* 불러오는 동안 보여 줄 윤곽 */
@@ -180,19 +203,7 @@ body[data-mt=tl] #npc{display:block;flex:1;min-width:0}
 .in{animation:pnIn .28s cubic-bezier(.2,.85,.25,1)}.out{animation:pnOut .17s ease-in forwards}
 body[data-mt=tl] .np>.ni,body[data-mt=tl] .np>.nv,body[data-mt=tl] .np>#npad{display:none}
 body[data-mt=tl] .np{padding:10px 12px 10px}
-.nch{display:flex;align-items:center;gap:8px;font-size:12px;line-height:1.4;color:var(--t3);white-space:nowrap;overflow:hidden;padding-left:8px;border-left:2px solid color-mix(in srgb,var(--g) 40%,transparent)}.nch b{color:var(--a2);margin-right:6px;font-weight:700}.nch>span{flex:1;min-width:0;overflow:hidden;text-overflow:ellipsis}.pg{flex:none;font-style:normal;font-size:11.5px;color:var(--m);font-variant-numeric:tabular-nums}
 body[data-mt=tl] .np{overflow:hidden}#npc{touch-action:pan-y;will-change:transform}
-.swh{margin-top:8px;text-align:center;font-size:12px;color:var(--a2);letter-spacing:.2px;opacity:.9}
-@keyframes nudge{0%,100%{transform:none}30%{transform:translateX(-24px)}55%{transform:translateX(9px)}75%{transform:translateX(-4px)}}.nudge{animation:nudge 1.1s .6s ease-in-out 1}
-.ncb{display:flex;align-items:center;gap:10px;margin-top:9px}
-.ncb .ad{flex:none;width:40px;height:40px;padding:0;display:grid;place-items:center}.ncb .ad em{display:none}.ncb .ad .ic{width:17px;height:17px}
-.nci{flex:1;min-width:0}.nci>*{white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
-.nci .tt{margin:0;font-size:15px;gap:6px}.nci .st{font-size:11px;padding:0 6px}.nci .ar{font-size:12.5px;margin-top:1px}.nci .chips{margin-top:3px}
-.ncb .eq{display:none;flex:none}#np.live .ncb .eq{display:flex}
-.nvx{flex:none;display:flex;gap:6px}
-.nvx button,.nx1{display:inline-flex;align-items:center;justify-content:center;height:44px;font-size:13px;font-weight:700}
-.nvx button{width:44px;padding:0}.nx1{padding:0 6px 0 12px}.nvx .ic,.nx1 .ic{width:18px;height:18px}
-.nc0{display:flex;align-items:center;gap:12px}.nc0>div{flex:1;min-width:0}.nc0 small{display:block;color:var(--g);font-size:11px;font-weight:700;letter-spacing:1.5px}.nc0 b{display:block;font-size:15px;line-height:1.35;color:var(--hi)}.nc0 span{display:block;margin-top:2px;color:var(--m);font-size:12px;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}.nx1{flex:none}
 .np{margin:0;padding:6px 6px 6px 12px;gap:8px;border-radius:12px}
 .np #npt{font-size:14px}.np small{font-size:11.5px}
 .np .nv{gap:4px}.np .nv button{min-height:40px;padding:0 14px;font-size:13px}
@@ -272,7 +283,7 @@ h3{display:flex;align-items:center;gap:12px;margin:0 0 18px;font-size:10.5px;let
 .ec{margin-bottom:18px;border-radius:16px;border-color:color-mix(in srgb,var(--l) 55%,transparent)}
 .ec span{padding:10px 14px 12px}
 main{padding:30px 48px 36px}
-.pw{width:min(100%,calc((100vh - 380px)*8/9))}
+.pw{width:min(100%,calc((100vh - 380px)*8/9));width:min(100%,calc((100dvh - 380px)*8/9))}
 .lb{margin:22px 4px 12px;letter-spacing:3.5px}.pw>.lb:first-child{margin-top:4px}
 .vid{border-radius:18px}
 .np{margin-top:20px;padding:14px 20px;gap:16px;border-radius:18px;border-color:color-mix(in srgb,var(--s44) 60%,transparent)}
@@ -284,7 +295,52 @@ main{padding:30px 48px 36px}
 .chips{margin-top:8px}.bt{margin-top:12px;gap:8px}.bt button{padding:5px 14px}
 #list{--pt:-24px}.gh{margin:20px -2px 12px;padding:10px 14px;border-radius:14px}
 .rk{padding:8px;gap:10px}
-footer{min-height:46px;gap:2px 26px;background:transparent;border-top-color:color-mix(in srgb,var(--s31) 50%,transparent)}
+footer{min-height:46px;padding-bottom:max(8px,env(safe-area-inset-bottom));gap:2px 26px;background:transparent;border-top-color:color-mix(in srgb,var(--s31) 50%,transparent)}
+}
+/* ── PC 배치의 태블릿(터치 화면), 그리고 가운데 칸이 좁을 때(창을 줄인 PC): 가운데 곡 정보를 모바일과 같은 장면 카드로 바꾼다
+   (원래 곡 정보 줄은 썸네일·담기·이전·다음 버튼이 자리를 차지해서 칸이 좁으면 곡 정보가 한 글자 폭으로 눌린다) */
+@media(min-width:901px) and (pointer:coarse){
+#npc{display:block;flex:1;min-width:0}
+.np>.ni,.np>.nv,.np>img,.np>.eq,#npad{display:none!important}
+.np{padding:10px 14px;overflow:hidden}#npc{touch-action:pan-y}.np .swh{display:block}
+}
+@media(min-width:901px){
+.pw{container:pw/inline-size}
+@container pw (max-width:460px){
+#npc{display:block;flex:1;min-width:0}
+.np>.ni,.np>.nv,.np>img,.np>.eq,#npad{display:none!important}
+.np{padding:10px 14px;overflow:hidden}.swh{display:none}
+}}
+/* ── 높이가 낮은 PC 배치 화면(태블릿 가로, 작은 노트북): 헤더·푸터·여백을 줄여 두 플레이어와 곡 정보가 스크롤 없이 들어가게 */
+@media(min-width:901px) and (max-height:900px){
+header{height:58px}
+main{padding:16px 32px 18px}
+.pw{width:min(100%,calc((100vh - 300px)*8/9));width:min(100%,calc((100dvh - 300px)*8/9))}
+.lb{margin:12px 4px 8px}.pw>.lb:first-child{margin-top:0}
+.np{margin-top:12px}
+.pn>div{padding:16px 20px}.tl{padding-top:16px}.rail{padding-top:14px}
+footer{min-height:38px;padding-top:4px;padding-bottom:max(4px,env(safe-area-inset-bottom))}
+}
+/* ── 태블릿(PC 배치 + 터치 화면): 높이를 플레이어에 몰아주려고 헤더·푸터를 없앤다
+   · 검색·안내·TOP·MY는 왼쪽 레일 맨 위로(.rtl). 검색 버튼을 누르면 그때만 위에 검색창 줄이 나타난다(body.sq)
+   · 테마·제보·홈 화면 추가는 모바일처럼 안내창 안에서, PC 단축키 안내는 숨김 */
+@media(min-width:901px) and (pointer:coarse){
+header,footer{display:none}
+body.sq header{display:flex;align-items:center;gap:10px;height:58px;padding:0 max(16px,env(safe-area-inset-right)) 0 max(16px,env(safe-area-inset-left))}
+body.sq header h1,body.sq header .hb,header #qc{display:none}body.sq #q{flex:1;min-width:0}body.sq #qx{display:block;flex:none;padding:9px 16px}
+.rail{padding:max(18px,env(safe-area-inset-top)) 10px max(14px,env(safe-area-inset-bottom))}.rail>a[data-se],.rail>.tot{display:none}
+.rtl{flex:1;display:grid;grid-template-rows:repeat(6,1fr);place-items:center}.rtl .rt{justify-self:stretch}.rtl .lg{width:34px;height:34px}.rtl .rq{flex:none}
+.rtl .rq{width:40px;height:40px;padding:0;display:grid;place-items:center;color:var(--a2)}.rtl .rh{font-size:16px;font-weight:800}
+.rtl .rt{flex:none;width:100%;display:flex;flex-direction:column;align-items:center;justify-content:center;gap:5px;padding:12px 2px 11px;border:0;border-radius:12px;background:none;color:var(--g);font-size:9.5px;font-weight:700;letter-spacing:.3px}
+.rtl .rt.on{color:var(--hi);background:var(--s28)}
+.rtl svg{width:21px;height:21px;fill:none;stroke:currentColor;stroke-width:1.8;stroke-linecap:round;stroke-linejoin:round}.rtl svg .f{fill:currentColor;stroke:none}.rtl .rq svg{width:18px;height:18px;stroke-width:2.2}.rtl .lg svg{fill:currentColor;stroke:none;width:17px;height:17px}
+#sc{flex:none;display:flex;gap:6px;overflow-x:auto;padding:2px 0 10px}
+#sc button{flex:none;min-height:36px;padding:0 14px;font-weight:700}#sc button.on{background:var(--a);border-color:var(--a);color:#fff}#sc small{color:var(--m);font-weight:500;margin-left:5px;font-size:11px}#sc button.on small{color:#fffc}
+main{padding:14px 28px}
+.pw{width:min(100%,calc((100vh - 200px)*8/9));width:min(100%,calc((100dvh - 200px)*8/9))}
+body.sq .pw{width:min(100%,calc((100dvh - 258px)*8/9))}
+.lb{margin:12px 4px 8px}.pw>.lb:first-child{margin-top:0}.np{margin-top:12px}
+.op{display:none}.om{display:block}
 }
 /* ── 폰 가로 모드: 높이가 매우 좁으므로(특히 사파리) 헤더와 탭을 왼쪽 세로 레일로 옮기고 콘텐츠가 화면 높이를 다 쓴다
    기본 모드: [원본] [장면 카드] [브금] 가로 배치 / 목록 화면: 여러 열로 한 화면에 많이 */
@@ -438,7 +494,7 @@ const SB={url:'https://voybhltsmjmbgfgdnneh.supabase.co',key:'sb_publishable_kgs
 // 실제 사이트에서만 재생·담기 집계. 로컬에서 집계를 시험하려면 콘솔에서 localStorage.live=1 → 새로고침 (끄기: delete localStorage.live)
 const LIVE=location.hostname=='rescene-bgm.github.io'||(()=>{try{return !!localStorage.live}catch{return false}})();
 const $=s=>document.querySelector(s),yt=new Promise(r=>{window.YT&&YT.Player?r():window.onYouTubeIframeAPIReady=r});
-const MQ=matchMedia('(max-width:900px)'),CO=matchMedia('(pointer:coarse)'),CAN_SHARE=()=>(MQ.matches||CO.matches)&&typeof navigator.share=='function';
+const MQ=matchMedia('(max-width:900px)'),TQ=matchMedia('(min-width:901px) and (pointer:coarse)'),CO=matchMedia('(pointer:coarse)'),CAN_SHARE=()=>(MQ.matches||CO.matches)&&typeof navigator.share=='function';
 const vid=u=>(String(u).match(/(?:v=|youtu\.be\/|shorts\/|embed\/)([\w-]{11})/)||[])[1];
 const th=u=>`https://i.ytimg.com/vi/${u}/mqdefault.jpg`;
 const sec=t=>t?String(t).split(':').reduce((a,b)=>a*60+ +b,0):0;
@@ -475,13 +531,16 @@ const num=v=>{const m=String(v??'').match(/\d+/g);return m?+m[m.length-1]:NaN};
 function epNo(e,i){for(const v of [e.ep,e.no,e.episode]){const n=num(v);if(!isNaN(n))return n}
  const a=num(e.id);if(!isNaN(a))return a;const t=String(e.title||'').match(/(\d+)\s*(?:화|편|회)/);return t?+t[1]:i}
 function latest(){let b=E[0],bk=[-1,-1,-1];E.forEach((e,i)=>{const k=[num(e.season)||0,epNo(e,i),i];if(k[0]>bk[0]||k[0]==bk[0]&&(k[1]>bk[1]||k[1]==bk[1]&&k[2]>bk[2])){b=e;bk=k}});return b}
+// 태블릿(PC 배치 + 터치 화면): 헤더·푸터를 숨기고, 모바일 가로 모드의 왼쪽 레일과 같은 구성(로고 · 검색 · ? · EPISODES · TOP · MY)을 레일 맨 위에 둔다
+// 시즌은 레일 버튼 대신 EPISODES 패널 위의 시즌 칩으로 고른다(시즌이 늘어도 레일이 길어지지 않게). 그 밖의 화면에서는 CSS로 숨김
+const RTL=()=>`<div class="rtl"><i class="lg" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M9.5 17.6a2.6 2.6 0 1 1-2-2.53V6.2L18.5 4v11.6a2.6 2.6 0 1 1-2-2.53V8.1l-7 1.4z"/></svg></i><button class="rq" data-qs aria-label="검색" title="검색"><svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="10.5" cy="10.5" r="6"/><path d="M15 15l5 5"/></svg></button><button class="rq rh" data-about aria-label="안내" title="안내">?</button><button class="rt${LO?' on':''}" data-ep aria-label="에피소드"><svg viewBox="0 0 24 24" aria-hidden="true"><rect x="3" y="5" width="18" height="14" rx="3"/><path class="f" d="M10 9v6l5-3z"/></svg>EPISODES</button><button class="rt${RS=='ch'?' on':''}" data-rt="ch" aria-label="인기 순위"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M5 20v-8M12 20V5M19 20v-5"/></svg>TOP</button><button class="rt${RS=='my'?' on':''}" data-rt="my" aria-label="나만의 플레이리스트"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 20s-7.5-4.6-7.5-10.2A4.1 4.1 0 0 1 12 7.4a4.1 4.1 0 0 1 7.5 2.4C19.5 15.4 12 20 12 20z"/></svg>MY</button></div>`;
 function nav(){const ss=[...new Set(E.map(e=>e.season))];
- $('#rl').innerHTML=ss.map(x=>{const es=E.filter(e=>e.season==x),n=uq(es.flatMap(e=>e.scenes));return `<a data-se="${esc(x)}" class="${x==SE&&LO?'on':''}" title="${es.length}편 · 고유 ${n}곡 (중복 제외)"><b>${esc(x)}</b><small>${es.length}편</small><small>${n}곡</small></a>`}).join('')+`<div class="tot" title="모든 시즌 통틀어 중복 제외"><small>전체</small><b>${uq(scenes)}</b><small>고유 곡</small></div>`;
+ $('#rl').innerHTML=RTL()+ss.map(x=>{const es=E.filter(e=>e.season==x),n=uq(es.flatMap(e=>e.scenes));return `<a data-se="${esc(x)}" class="${x==SE&&LO?'on':''}" title="${es.length}편 · 고유 ${n}곡 (중복 제외)"><b>${esc(x)}</b><small>${es.length}편</small><small>${n}곡</small></a>`}).join('')+`<div class="tot" title="모든 시즌 통틀어 중복 제외"><small>전체</small><b>${uq(scenes)}</b><small>고유 곡</small></div>`;
  $('#sc').innerHTML=ss.map(x=>`<button data-se="${esc(x)}" class="${x==SE?'on':''}">${esc(x)}<small>${E.filter(e=>e.season==x).length}편</small></button>`).join('');
  $('#el').innerHTML=E.filter(e=>e.season==SE).map(e=>`<div class="ec ${e==ep?'on':''}" data-e="${e.id}" tabindex="0" role="button"><img loading="lazy" alt="" src="${th(vid(e.url))}"><span>${esc(e.title)}<small title="같은 편 안의 중복 제외">${uq(e.scenes)}곡</small></span></div>`).join('');
  $('#pe').classList.toggle('c',!LO)}
 function openR(k){RS=RS==k?null:k;$('#pr').classList.toggle('c',!RS);$('#ch').hidden=RS!='ch';$('#my').hidden=RS!='my';
- document.querySelectorAll('.rt2 button').forEach(a=>a.classList.toggle('on',a.dataset.rt==RS));if(RS&&innerWidth<1700&&LO){LO=false;nav()}}
+ document.querySelectorAll('button[data-rt]').forEach(a=>a.classList.toggle('on',a.dataset.rt==RS));if(RS&&innerWidth<1700&&LO){LO=false;nav()}}
 function cueMain(e,at=0){yt.then(()=>{const id=vid(e.url);clr('v');mp=false;if(P&&P.cueVideoById)P.cueVideoById({videoId:id,startSeconds:at});else if(!P)P=new YT.Player('v',{width:'100%',height:'100%',videoId:id,playerVars:{rel:0,start:at,playsinline:1},events:{onStateChange:x=>st(x,'m'),onError:x=>perr('v',vid(ep.url),x.data)}});live()})}
 function pick(e,at=0,keep){ep=e;$('#q').value='';SE=e.season;nav();cueMain(e,at);list();if(!keep){dflt();if(!bp&&!qOn)npIntro()}npCard()}
 function dflt(){if(bp||qOn||!B||!B.cueVideoById||!ep||!ep.scenes.length)return;const c=ep.scenes[0];cur=c.uid;selB=c.id;clr('mini');B.cueVideoById({videoId:c.uid,startSeconds:sec(c.start)});npIntro()}
@@ -590,7 +649,7 @@ async function chart(){const o=$('#top');if(!SB.url){o.innerHTML='<p class="empt
  const m={};r.forEach(x=>{const u=al(x.track_uid);m[u]=(m[u]||0)+(+x[tab]||0)});const a=Object.entries(m).map(([track_uid,n])=>({track_uid,[tab]:n})).filter(x=>tracks[x.track_uid]).sort((x,y)=>y[tab]-x[tab]).slice(0,20);
  o.innerHTML=a.filter(x=>tracks[x.track_uid]).map((x,i)=>`<div class="rk tk" data-p="${x.track_uid}" tabindex="0" role="button"><i>${i+1}</i><img alt="" src="${th(x.track_uid)}"><div><b>${esc(tracks[x.track_uid].title)}</b><small>${esc(tracks[x.track_uid].artist)}</small></div>${adB(x.track_uid)}</div>`).join('')||'<p class="empty">아직 집계된 곡이 없습니다.</p>'}
  catch{o.innerHTML='<p class="empty">통계를 불러오지 못했습니다.</p>'}}
-document.addEventListener('click',e=>{const t=e.target.closest('[data-p],[data-a],[data-s],[data-e],[data-r],[data-tab],[data-se],[data-rt],[data-q],[data-pa],[data-qn],[data-sn],[data-share],[data-about],[data-th],[data-qx],[data-qs],[data-x],[data-tlx],[data-shx],[data-sf],[data-xe],[data-lang]');if(!t)return;const d=t.dataset;
+document.addEventListener('click',e=>{const t=e.target.closest('[data-p],[data-a],[data-s],[data-e],[data-r],[data-tab],[data-se],[data-ep],[data-rt],[data-q],[data-pa],[data-qn],[data-sn],[data-share],[data-about],[data-th],[data-qx],[data-qs],[data-x],[data-tlx],[data-shx],[data-sf],[data-xe],[data-lang]');if(!t)return;const d=t.dataset;
  if(d.th!=null){setTheme(+d.th);return}
  if(d.about!=null){e.preventDefault();$('#ab').showModal();return}
  if(d.lang){setLang(d.lang,true);return}
@@ -608,7 +667,8 @@ document.addEventListener('click',e=>{const t=e.target.closest('[data-p],[data-a
  else if(d.e){pick(E.find(x=>x.id==d.e));if(MQ.matches)mt('tl',endSearch())}
  else if(d.s){const c=scenes.find(x=>x.id==d.s),fromSr=MQ.matches&&document.body.dataset.mt=='sr';if(fromSr){document.body.classList.remove('bv');document.body.classList.add('mv');$('#q').blur();sz()}else if(MQ.matches&&document.body.classList.contains('ex'))mt('x');
   watch(c);setSel(c.id,fromSr);stopB();syncB(c);live()}
- else if(d.se){if(MQ.matches){SE=d.se;LO=true;nav();return}if(SE==d.se)LO=!LO;else{SE=d.se;LO=true}nav();if(LO&&RS&&innerWidth<1700)openR(RS)}
+ else if(d.ep!=null){LO=!LO;nav();if(LO&&RS&&innerWidth<1700)openR(RS)}
+ else if(d.se){if(MQ.matches||TQ.matches){SE=d.se;LO=true;nav();return}if(SE==d.se)LO=!LO;else{SE=d.se;LO=true}nav();if(LO&&RS&&innerWidth<1700)openR(RS)}
  else if(d.rt)openR(d.rt)
  else if(d.tab){tab=d.tab;document.querySelectorAll('#ct button').forEach(b=>b.classList.toggle('on',b==t));chart()}});
 // ── 모바일 화면 전환: tl(시청) / ch·my(목록) / sr(검색) + 시트(dr: 에피소드, ex: 타임라인 펼침)
@@ -651,7 +711,7 @@ $('#q').addEventListener('input',()=>{if(!MQ.matches)return;const m=document.bod
  if($('#q').value.trim()){if(m!='sr'){PM=m;mt('sr')}}else if(m=='sr')mt(PM)});
 $('#q').addEventListener('keydown',e=>{if(e.key=='Enter'&&MQ.matches)$('#q').blur()});
 // 검색창을 열고 아무것도 입력하지 않은 채 다른 곳을 누르면 검색창을 닫는다
-$('#q').addEventListener('blur',()=>{if(MQ.matches)setTimeout(()=>{if(document.activeElement!==$('#q')&&!$('#q').value.trim()&&document.body.classList.contains('sq'))closeSr()},200)});
+$('#q').addEventListener('blur',()=>{if(MQ.matches||TQ.matches)setTimeout(()=>{if(document.activeElement!==$('#q')&&!$('#q').value.trim()&&document.body.classList.contains('sq'))closeSr()},200)});
 function toast(m){const t=$('#toast');t.textContent=m;t.classList.add('on');clearTimeout(toast.t);toast.t=setTimeout(()=>t.classList.remove('on'),3400)}
 // 링크 복사 결과는 버튼 바로 아래 말풍선으로 알린다(화면 아래 토스트는 눈에 잘 안 띄므로)
 function shp(h,keep){const o=$('#shp');clearTimeout(shp.t);o.innerHTML=h+'<button class="x" data-shx aria-label="닫기">✕</button>';o.hidden=false;
@@ -699,9 +759,9 @@ window.addEventListener('blur',()=>setTimeout(()=>{const a=document.activeElemen
 // 사용자가 타임라인을 직접 스크롤한 직후에는 자동 따라가기 스크롤을 잠시 멈춘다
 let ut=0;['touchstart','wheel'].forEach(k=>$('.tl').addEventListener(k,()=>ut=Date.now(),{passive:true}));
 setInterval(()=>{if(SRC=='main'&&mp)follow(Date.now()-ut>4000)},1000);
-// ── 모바일: 장면 카드를 좌우로 밀어 이전/다음. 카드가 손가락을 따라오고, 더 갈 곳이 없으면 고무줄처럼 버틴다
+// ── 모바일·태블릿: 장면 카드를 좌우로 밀어 이전/다음. 카드가 손가락을 따라오고, 더 갈 곳이 없으면 고무줄처럼 버틴다
 {const N=$('#npc');let sw=null;const reset=()=>{N.style.transition='transform .2s ease,opacity .2s';N.style.transform='';N.style.opacity=''};
- N.addEventListener('touchstart',e=>{if(!MQ.matches||e.touches.length>1)return;const t=e.touches[0];sw={x:t.clientX,y:t.clientY,dx:0,lock:0}},{passive:true});
+ N.addEventListener('touchstart',e=>{if(!(MQ.matches||TQ.matches)||e.touches.length>1)return;const t=e.touches[0];sw={x:t.clientX,y:t.clientY,dx:0,lock:0}},{passive:true});
  N.addEventListener('touchmove',e=>{if(!sw)return;const t=e.touches[0],dx=t.clientX-sw.x,dy=t.clientY-sw.y;
   if(!sw.lock){if(Math.abs(dx)>10&&Math.abs(dx)>Math.abs(dy)*1.2)sw.lock=1;else{if(Math.abs(dy)>10)sw=null;return}}
   e.preventDefault();const np=$('#np'),intro=!!N.querySelector('.nc0'),blocked=dx<0?np.classList.contains('atl'):(intro||np.classList.contains('atf'));
@@ -719,14 +779,13 @@ function toggleP(){if(mp&&P&&P.pauseVideo)return P.pauseVideo();if(bp&&B&&B.paus
 document.addEventListener('keydown',e=>{if(e.ctrlKey||e.metaKey||e.altKey||e.isComposing)return;const tg=e.target,typing=tg.closest&&tg.closest('input,textarea,select,[contenteditable]');
  if((e.key=='Enter'||e.key==' ')&&tg.getAttribute&&tg.getAttribute('role')=='button'){e.preventDefault();tg.click();return}
  if(e.key==' '&&tg.closest&&tg.closest('button,a'))return;
- if(e.key=='Escape'){if(tg.id=='q'){if(MQ.matches)closeSr();else{$('#q').value='';list();$('#q').blur()}}return}
+ if(e.key=='Escape'){if(tg.id=='q'){if(MQ.matches||TQ.matches)closeSr();else{$('#q').value='';list();$('#q').blur()}}return}
  if(typing||$('#ab').open)return;
- if(e.key=='/'){e.preventDefault();if(MQ.matches)document.body.classList.add('sq');$('#q').focus()}
+ if(e.key=='/'){e.preventDefault();if(MQ.matches||TQ.matches)document.body.classList.add('sq');$('#q').focus()}
  else if(e.key=='ArrowRight'||e.key=='ArrowLeft'){e.preventDefault();nv(e.key=='ArrowRight'?1:-1)}
  else if(e.key==' '){e.preventDefault();toggleP()}});
 const TH=[['보라','#8b5cf6','#cbbfff','#64649e','#5cc8ff','#d9bd8c'],['파랑','#3b82f6','#bfd7ff','#4f6f9f','#5eead4','#e6c98e'],['초록','#16a34a','#bff0cf','#4f8a68','#a3e635','#e3d08a'],['주황','#ea580c','#ffd2b0','#9a6850','#fbbf24','#f0d6a8'],['핑크','#db2777','#ffc2e0','#9a5a82','#f0abfc','#f3cfa0'],['흑백','#71717a','#e4e4e7','#7a7a7a','#d4d4d8','#d4d4d8'],['라이트','#7c4de8','#5a3bc4','#8686c4','#0b7fb8','#9a7228',1]];
-const FAV=c=>'data:image/svg+xml,'+encodeURIComponent(`<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'><rect width='32' height='32' rx='8' fill='${c}'/><path transform='translate(4 4.5)' fill='#fff' d='M9.5 17.6a2.6 2.6 0 1 1-2-2.53V6.2L18.5 4v11.6a2.6 2.6 0 1 1-2-2.53V8.1l-7 1.4z'/></svg>`);
-function setTheme(i,save=true){const t=TH[i]||TH[0],r=document.documentElement.style,k=TH[i]?i:0;$('meta[name=theme-color]').content=t[6]?'#f1f0f8':'#0b0a14';$('#fav').href=FAV(t[1]);document.documentElement.classList.toggle('lt',!!t[6]);['--a','--a2','--s','--b','--g'].forEach((x,j)=>r.setProperty(x,t[j+1]));
+function setTheme(i,save=true){const t=TH[i]||TH[0],r=document.documentElement.style,k=TH[i]?i:0;$('meta[name=theme-color]').content=t[6]?'#f1f0f8':'#0b0a14';setFav(t[1]);document.documentElement.classList.toggle('lt',!!t[6]);['--a','--a2','--s','--b','--g'].forEach((x,j)=>r.setProperty(x,t[j+1]));
  document.querySelectorAll('.sw button').forEach(b=>b.classList.toggle('on',+b.dataset.th==k));if(save)try{localStorage.theme=i}catch{}}
 document.querySelectorAll('.sw').forEach(s=>s.innerHTML=TH.map((t,i)=>`<button data-th="${i}" title="${t[0]}" aria-label="${t[0]} 테마" style="--c:${t[6]?'#e9e7f5':t[1]}"></button>`).join(''));
 setTheme(+ld('theme',0)||0,false);
