@@ -647,7 +647,8 @@ function add(u){if(pl.includes(u)){unadd(u,true);return}pl.push(u);localStorage.
 function unadd(u,msg){const i=pl.indexOf(u);if(i<0)return;pl.splice(i,1);try{localStorage.pl=JSON.stringify(pl)}catch{}if(qOn&&i<=qi)qi--;rp();list();if(msg)toast('내 리스트에서 뺐어요')}
 function rp(){syncAd();$('#pc').textContent=pl.length?pl.length+'곡 · '+(CO.matches?'꾹 눌러 끌어서':'끌어서')+' 정렬':'';
  $('#pl').innerHTML=pl.map((u,i)=>tracks[u]?`<div class="rk pl2${u==cur&&qOn?' on':''}" draggable="${!CO.matches}" data-q="${i}" tabindex="0" role="button"><i class="hd">⋮⋮</i><img draggable="false" alt="" src="${th(u)}"><div><b>${esc(tracks[u].title)}</b><small>${esc(tracks[u].artist)}</small></div><button data-r="${u}">✕</button></div>`:'').join('')||'<p class="empty">+ 담기를 누르면 여기에 모입니다.</p>'}
-function bump(u,k){if(SB.url&&LIVE)fetch(SB.url+'/rest/v1/rpc/bump',{method:'POST',headers:H,body:JSON.stringify({p_uid:u,p_kind:k})}).catch(()=>{})}
+// 곡명·아티스트도 함께 보낸다: Supabase가 새 행을 만들 때 관리용 이름으로 넣는다(이미 있는 이름은 덮어쓰지 않음)
+function bump(u,k){if(SB.url&&LIVE){const c=tracks[u]||{};fetch(SB.url+'/rest/v1/rpc/bump',{method:'POST',headers:H,body:JSON.stringify({p_uid:u,p_kind:k,p_title:c.title||null,p_artist:c.artist||null})}).catch(()=>{})}}
 // 기본으로 여는 편(최신 편)의 앞쪽 장면(첫 곡 + 다음 세 곡)은 시험 삼아 눌러 보는 재생이 많아서 확률적으로 덜 센다
 // W[i] = i번째 장면 곡의 재생이 1회로 집계될 확률. 다섯 번째 장면부터, 다른 편, TOP·플레이리스트에서 고른 재생은 항상 1
 const W=[.3,.5,.7,.85];
